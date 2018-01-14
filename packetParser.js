@@ -1,5 +1,5 @@
 /**
-  Call init() to begin parsing process.
+  Call init to begin parsing process.
 
     var x = init(packet_data)
     alert(x)
@@ -13,7 +13,7 @@
   it will attempt to join the packets in storage.
 
   If storage has completed packet, it will then call
-  the packet parser.
+  packetparser.
 **/
 
 var storage = []
