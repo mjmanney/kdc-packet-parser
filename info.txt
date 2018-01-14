@@ -11,9 +11,9 @@ INFO
 **************
 HEADER:     0x03
 TERMINATOR: 0x40
-PAYLOAD:    refers to the bar code data.s
+PAYLOAD:    refers to the bar code data
 DATA SIZE:  the number of BYTES to be sent to the host {excludes header and terminator}.
-CHECKSUM:   the number which adds to 0 when it is added to the sum of all fields 
+CHECKSUM:   the number which adds to 0 when it is added to the sum of all fields
 {excludes header and terminator}.
 
 C = RECORDS    [2 BYTE] {1 BYTE FOR LASER MODEL}
@@ -44,19 +44,19 @@ Remaining [6 BITS] indicate symbology {5 BITS FOR CAMERA MODEL}.
 
 350L Symbology    |     bit #     |++++|   350C Symbology   |     bit#
 ------------------------------------------------------------------------
-EAN13                  0          |++++|    CODE32                 0                            
+EAN13                  0          |++++|    CODE32                 0
 EAN8                   1          |++++|    TRIOPTIC               1
 UPCA                   2          |++++|    KOREAPOST              2
 UPCE                   3          |++++|    AUSPOST                3
 CODE39                 4          |++++|    BRITISHPOST            4
 ITF14                  5          |++++|    CANADAPOST             5
 CODE128                6          |++++|    EAN8                   6
-I2o5                   7          |++++|    UPC-E                  7 
+I2o5                   7          |++++|    UPC-E                  7
 CODABAR                8          |++++|    EAN128                 8
 EAN128                 9          |++++|    JAPANPOST              9
 CODE93                 10         |++++|    KIXPOST                10
 CODE35                 11         |++++|    PLANETCODE             11
-BOOKLANDEAN            12         |++++|    OCR                    12 
+BOOKLANDEAN            12         |++++|    OCR                    12
 EAN13wADDON	           13         |++++|    POSTNET                13
 EAN8wADDOn             14         |++++|    CHINAPOST              14
 UPCAwADDON             15         |++++|    MICROPDF417            15
@@ -70,7 +70,7 @@ UPCEwADDON             16         |++++|    TLC39                  16
                                   |++++|    IATA                   23
                                   |++++|    MSI                    24
                                   |++++|    CODE11                 25
-                                  |++++|    CODE93                 26 
+                                  |++++|    CODE93                 26
                                   |++++|    CODE128                27
                                   |++++|    CODE49                 28
                                   |++++|    MATRIX2o5              29
@@ -116,12 +116,12 @@ Timestamp has 6 subfields [4 BYTES]
 [VALUE] Year | Months | Days | AM/PM | Hours | Min | Seconds
 [BITS]   6   |    4   |  5   |   1   |  4    |  6  |    6
 
-Where: 
+Where:
 	base year       = 2000 {0 indicates this year}
         hour range      = 0 - 11
         am / pm         = 0 / 1
 
-First split the 4 BYTES into binary and partion the bits in the lengths
+First split the 4 BYTES into binary and partition the bits in the lengths
 stated in the table above.
 
 Finally convert the binary in decimal.  Add the decimal value to the
