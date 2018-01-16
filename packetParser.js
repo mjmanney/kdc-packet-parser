@@ -36,6 +36,7 @@ function packetConcat(arr){
   var p   = ''
   while(i < len){
     var hexArr = hexChunks(arr.join(''))
+    var bytes  = hexArr.length
     if(hexArr[0] == '03'){
        p += arr[i]
     }
@@ -51,6 +52,9 @@ function packetConcat(arr){
   var p_bytes  = p_concat.length
   if(p_concat[0] == '03' && p_concat[p_bytes - 1] == '40'){
     packetParser(p)
+    for (var j in storage) {
+		  storage.pop(j)
+	  }
   }
 }
 
@@ -78,7 +82,7 @@ function hexChunks(hexString) {
 function getPayload(hexArr, bytes) {
   var payload = ''
   var payloadIndex_start = 7
-  var payloadIndex_end   = hexArr.indexOf(hexArr[bytes - 7])
+  var payloadIndex_end   = bytes - 7
 
   while(payloadIndex_start <= payloadIndex_end){
     payload += hexArr[payloadIndex_start]
