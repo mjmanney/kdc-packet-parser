@@ -47,14 +47,14 @@ function packetConcat(arr){
       p += arr[i]
     }
     i++
- }
+  }
   var p_concat = hexChunks(p)
   var p_bytes  = p_concat.length
-  if(p_concat[0] == '03' && p_concat[p_bytes - 1] == '40'){
+  if(p_concat[0] == '03' && p_concat[p_bytes - 1] == '40') {
     packetParser(p)
     for (var j in storage) {
-		  storage.pop(j)
-	  }
+      storage.pop(j)
+    }
   }
 }
 
