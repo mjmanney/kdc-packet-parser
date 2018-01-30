@@ -2,9 +2,9 @@
   Call init to begin parsing process.
 
     var x = init(packet_data)
-    alert(x)
+    console.log(x)
 
-  It will first check the packet to for completeness.
+  It will first check the packet for completeness.
   If complete, it will call packetParser.  Otherwise
   it will be sent to storage.
 
